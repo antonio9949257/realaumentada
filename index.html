@@ -32,22 +32,23 @@
   </style>
 </head>
 <body>
-  <model-viewer
-    src="./assets/jot.glb"
-    alt="Modelo 3D en RA"
-    ar
-    ar-modes="webxr scene-viewer quick-look"
-    ar-scale="fixed"
-    camera-controls
-    environment-image="neutral"
-    shadow-intensity="1"
-    xr-environment
-    auto-rotate
-  >
-    <button id="ar-button" slot="ar-button">
-      Ver en Realidad Aumentada
-    </button>
-  </model-viewer>
+<model-viewer
+  src="./assets/jot.glb"
+  alt="Modelo 3D en RA"
+  ar
+  ar-scale="fixed"
+  scale="1 1 1"
+  camera-target="0m 0m 0m"
+  ar-modes="webxr scene-viewer quick-look"
+  camera-controls
+  environment-image="neutral"
+  shadow-intensity="1"
+  xr-environment
+  auto-rotate
+>
+  <button slot="ar-button">Ver en RA</button>
+</model-viewer>
+
 </body>
 </html>
 
