@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Cámara trasera básica</title>
+<style>
+  body, html { margin:0; height:100%; overflow:hidden; }
+  video {
+    width: 100vw; height: 100vh; object-fit: cover;
+  }
+</style>
+</head>
+<body>
+<video id="video" autoplay playsinline></video>
+<script>
+  const constraints = {
+    video: { facingMode: { exact: "environment" } }
+  };
+  navigator.mediaDevices.getUserMedia(constraints)
+    .then(stream => {
+      const video = document.getElementById('video');
+      video.srcObject = stream;
+    })
+    .catch(e => {
+      console.error('Error acceso cámara:', e);
+      alert('No se pudo acceder a la cámara trasera.');
+    });
+</script>
+</body>
+</html>
